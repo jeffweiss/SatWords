@@ -1,7 +1,10 @@
 SatWords::Application.routes.draw do
-  get "words/new"
+  resources :users
+  resources :words
 
-  get "users/new"
+  match '/signup',  :to => 'users#new'
+
+  get "words/new"
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

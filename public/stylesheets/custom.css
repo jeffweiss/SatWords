@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #cff;
+  background: #8506a9;
 }
 
 header {
@@ -27,12 +27,12 @@ section h1 {
 }
 
 a {
-  color: #09c;
+  color: #b23ad4;
   text-decoration: none;
 }
 
 a:hover {
-  color: #069;
+  color: #56026e;
   text-decoration: underline;
 }
 
