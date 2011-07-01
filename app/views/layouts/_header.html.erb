@@ -1,8 +1,9 @@
 <header>
-  <%= image_tag("logo.png", :alt => "SAT Words", :class => "round") %>
+  <%= logo = image_tag("logo.png", :alt => "SAT Words", :class => "round") %>
+  <%- link_to logo, root_path %>
   <nav class="round">
     <ul>
-      <li><%= link_to "Home", "#" %></li>
+      <li><%= link_to "Home", root_path %></li>
     </ul>
   </nav>
 </header>
