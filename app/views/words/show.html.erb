@@ -1,0 +1,13 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= @word.word %>
+      </h1>
+    </td>
+    <td class="sidebar round">
+      <strong>Word</strong> <%= @word.word %><br />
+      <strong>URL</strong>  <%= link_to word_path(@word), @word %>
+    </td>
+  </tr>
+</table>

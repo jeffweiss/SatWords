@@ -1,2 +1,11 @@
-<h1>Words#new</h1>
-<p>Find me in app/views/words/new.html.erb</p>
+<h1>New Word</h1>
+<%= form_for(@word) do |f| %>
+  <%= render 'shared/word_error_messages' %>
+  <div class="field">
+    <%= f.label :word %><br />
+    <%= f.text_field :word %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

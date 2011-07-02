@@ -4,8 +4,6 @@ SatWords::Application.routes.draw do
 
   match '/signup',  :to => 'users#new'
 
-  get "words/new"
-
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   root :to => 'pages#home'
