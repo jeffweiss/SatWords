@@ -1,9 +1,12 @@
 <h1>All words</h1>
 
+<%= link_to "New word", new_word_path %>
+
 <%= will_paginate %>
 
 <ul class="words">
   <%= render @words %>
 </ul>
+
 
 <%= will_paginate %>
