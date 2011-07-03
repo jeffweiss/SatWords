@@ -1,0 +1,7 @@
+<li>
+  <%= link_to word.word, word %>
+  <% if signed_in? && current_user.admin? %>
+    | <%= link_to "delete", word, :method => :delete, :confirm => "You sure?",
+                                  :title => "Delete #{word.word}" %>
+  <% end %>
+</li>

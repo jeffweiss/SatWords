@@ -1,4 +1,4 @@
-<h1>New Word</h1>
+<h1>Edit word</h1>
 <%= form_for(@word) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
@@ -6,6 +6,6 @@
     <%= f.text_field :word %>
   </div>
   <div class="actions">
-    <%= f.submit "Submit" %>
+    <%= f.submit "Update" %>
   </div>
 <% end %>
