@@ -9,6 +9,8 @@ class WordsController < ApplicationController
 
   def show
     @word = Word.find(params[:id])
+    @definitions = @word.definitions
+    @examples = @word.examples
     @title = @word.word
   end
 
@@ -51,10 +53,6 @@ class WordsController < ApplicationController
   end
 
   private
-
-    def authenticate
-      deny_access unless signed_in?
-    end
 
     def admin_user
       redirect_to(root_path) unless current_user.admin?

@@ -4,10 +4,24 @@
       <h1>
         <%= @word.word %>
       </h1>
+      <% unless @word.definitions.empty? %>
+        <table class="definitions" summary="Word definitions">
+          <th>Definitions</th>
+          <%= render @definitions %>
+        </table>
+      <% end %>
+      <% unless @word.examples.empty? %>
+        <table class="examples" summary="Word examples">
+          <th>Examples</th>
+          <%= render @examples %>
+        </table>
+      <% end %>
     </td>
     <td class="sidebar round">
       <strong>Word</strong> <%= @word.word %><br />
-      <strong>URL</strong>  <%= link_to word_path(@word), @word %>
+      <strong>URL</strong>  <%= link_to word_path(@word), @word %><br />
+      <strong>Definitions</strong> <%= @word.definitions.count %><br />
+      <strong>Examples</strong> <%= @word.examples.count %>
     </td>
   </tr>
 </table>

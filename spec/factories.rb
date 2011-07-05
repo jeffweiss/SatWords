@@ -13,3 +13,13 @@ end
 Factory.define :word do |word|
   word.word "brevity"
 end
+
+Factory.define :definition do |definition|
+  definition.content "shortness"
+  definition.association :word
+end
+
+Factory.define :example do |example|
+  example.content "brevity is required for text messages and tweets"
+  example.association :word
+end

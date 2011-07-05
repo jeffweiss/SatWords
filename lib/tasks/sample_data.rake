@@ -19,5 +19,11 @@ namespace :db do
       word = Faker::Lorem.words
       Word.create!(:word => word)
     end
+    Word.all.each do |word|
+      10.times do
+        word.definitions.create!(:content => Faker::Lorem.sentence(3))
+        word.examples.create!(:content => Faker::Lorem.sentence(5))
+      end
+    end
   end
 end

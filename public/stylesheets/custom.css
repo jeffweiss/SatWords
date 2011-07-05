@@ -188,3 +188,80 @@ ul.words {
 .words li {
   list-style: none;
 }
+
+h1.definition {
+  margin-bottom: 0.3em;
+}
+
+table.definitions {
+  margin-top: 1em;
+}
+
+table.definitions tr {
+  height: 70px;
+}
+
+table.definitions tr td.definition {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.definitions tr td.definition span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
+div.word_info a {
+  text-decoration: none;
+}
+
+div.word_info span.word_name {
+  position: absolute;
+}
+div.word_info span.definitions {
+  font-size: 80%;
+}
+
+form.new_definition {
+  margin-bottom: 2em;
+}
+
+form.new_definition textarea {
+  height: 4em;
+  margin-bottom: 0;
+}
+
+h1.example {
+  margin-bottom: 0.3em;
+}
+
+table.examples {
+  margin-top: 1em;
+}
+
+table.examples tr {
+  height: 70px;
+}
+
+table.examples tr td.example {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.examples tr td.example span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
+form.new_example {
+  margin-bottom: 2em;
+}
+
+form.new_example textarea {
+  height: 4em;
+  margin-bottom: 0;
+}

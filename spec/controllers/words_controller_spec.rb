@@ -19,8 +19,10 @@ describe WordsController do
         third = Factory(:word, :word => "misanthrope")
 
         @words = [@word, second, third]
+        @testable_words = [@word, second, third]
         30.times do
-          @words << Factory(:word, :word => Faker::Lorem.words)
+          fake_word = Faker::Lorem.words
+          @words << Factory(:word, :word => fake_word)
         end
       end
 
@@ -35,8 +37,8 @@ describe WordsController do
       end
 
       it "should have an element for each word" do
-        get :index
-        @words[0..2].each do |word|
+        get :index, :page => 2
+        @testable_words.each do |word|
           response.should have_selector("li", :content => word.word)
         end
       end
@@ -50,6 +52,32 @@ describe WordsController do
         response.should have_selector("a", :href => "/words?page=2",
                                            :content => "Next")
       end
+    end
+  end
+
+  describe "GET 'show'" do
+    before(:each) do
+      @user = Factory(:user)
+      test_sign_in(@user)
+      @word = Factory(:word)
+    end
+
+    it "should show the word's definitions" do
+      d1 = Factory(:definition, :word => @word, :content => "Foo bar definition")
+      d2 = Factory(:definition, :word => @word, :content => "Baz quuz definition")
+
+      get :show, :id => @word
+      response.should have_selector("span.content", :content => d1.content)
+      response.should have_selector("span.content", :content => d2.content)
+    end
+
+    it "should show the word's examples" do
+      e1 = Factory(:example, :word => @word, :content => "Foo bar example")
+      e2 = Factory(:example, :word => @word, :content => "Baz quuz example")
+
+      get :show, :id => @word
+      response.should have_selector("span.content", :content => e1.content)
+      response.should have_selector("span.content", :content => e2.content)
     end
   end
 
