@@ -2,12 +2,15 @@ class DefinitionsController < ApplicationController
   before_filter :authenticate
 
   def create
-    @definition = current_word.definitions.build(params[:definition])
+    @word = params[:word]
+    @definitions = @word.definitions.clone
+    @definition = @word.definitions.build(params[:definition])
     if @definition.save
       flash[:success] = "Definition created!"
-      redirect_to word_path, :word => current_word
+      redirect_to word_path(@word)
     else
-      render 'words/show', :word => current_word
+      @examples = @word.examples
+      render 'words/show'
     end
   end
 

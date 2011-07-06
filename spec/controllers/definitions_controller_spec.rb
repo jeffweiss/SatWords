@@ -28,12 +28,12 @@ describe DefinitionsController do
 
       it "should not create a definition" do
         lambda do
-          post :create, :definition => @attr
+          post :create, :definition => @attr, :word => @word
         end.should_not change(Definition, :count)
       end
 
       it "should render the word show page" do
-        post :create, :definition => @attr
+        post :create, :definition => @attr, :word => @word
         response.should render_template('words/show')
       end
     end
@@ -45,17 +45,17 @@ describe DefinitionsController do
 
       it "should create a definition" do
         lambda do
-          post :create, :definition => @attr
+          post :create, :definition => @attr, :word => @word
         end.should change(Definition, :count).by(1)
       end
 
       it "should redirect to the word page" do
-        post :create, :definition => @attr
-        response.should redirect_to(word_path, :param => @word)
+        post :create, :definition => @attr, :word => @word
+        response.should redirect_to(word_path(@word))
       end
 
       it "should have a flash message" do
-        post :create, :definition => @attr
+        post :create, :definition => @attr, :word => @word
         flash[:success].should =~ /definition created/i
       end
     end
