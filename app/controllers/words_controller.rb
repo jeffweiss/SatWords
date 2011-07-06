@@ -10,6 +10,7 @@ class WordsController < ApplicationController
   def show
     @word = Word.find(params[:id])
     @definitions = @word.definitions
+    @definition = Definition.new if signed_in?
     @examples = @word.examples
     @title = @word.word
   end

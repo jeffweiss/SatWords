@@ -2,7 +2,8 @@ class ExamplesController < ApplicationController
   before_filter :authenticate
 
   def create
-    @word = params[:word]
+    @word = Word.find_by_id(params[:word_id])
+    @definition = Definition.new if signed_in?
     @examples = @word.examples.clone
     @example = @word.examples.build(params[:example])
     if @example.save

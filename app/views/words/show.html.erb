@@ -10,6 +10,7 @@
           <%= render @definitions %>
         </table>
       <% end %>
+			<%= render 'shared/definition_form'%>
       <% unless @word.examples.empty? %>
         <table class="examples" summary="Word examples">
           <th>Examples</th>

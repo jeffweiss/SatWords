@@ -2,7 +2,7 @@ class DefinitionsController < ApplicationController
   before_filter :authenticate
 
   def create
-    @word = params[:word]
+    @word = Word.find_by_id(params[:word_id])
     @definitions = @word.definitions.clone
     @definition = @word.definitions.build(params[:definition])
     if @definition.save
