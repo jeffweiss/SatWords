@@ -32,16 +32,6 @@ ActiveRecord::Schema.define(:version => 20110704041255) do
   add_index "examples", ["created_at"], :name => "index_examples_on_created_at"
   add_index "examples", ["word_id"], :name => "index_examples_on_word_id"
 
-  create_table "explanations", :force => true do |t|
-    t.string   "content"
-    t.string   "word_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "explanations", ["created_at"], :name => "index_explanations_on_created_at"
-  add_index "explanations", ["word_id"], :name => "index_explanations_on_word_id"
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

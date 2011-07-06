@@ -11,6 +11,7 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
     @definitions = @word.definitions
     @definition = Definition.new if signed_in?
+    @example = Example.new if signed_in?
     @examples = @word.examples
     @title = @word.word
   end

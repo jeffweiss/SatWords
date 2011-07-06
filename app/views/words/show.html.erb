@@ -4,19 +4,21 @@
       <h1>
         <%= @word.word %>
       </h1>
-      <% unless @word.definitions.empty? %>
-        <table class="definitions" summary="Word definitions">
-          <th>Definitions</th>
+      <%= render 'shared/wordnik' %>
+      <table class="definitions" summary="Word definitions">
+        <th>Definitions</th>
+        <% unless @word.definitions.empty? %>
           <%= render @definitions %>
-        </table>
-      <% end %>
-			<%= render 'shared/definition_form'%>
-      <% unless @word.examples.empty? %>
-        <table class="examples" summary="Word examples">
-          <th>Examples</th>
+        <% end %>
+      </table>
+      <%= render 'shared/definition_form'%>
+      <table class="examples" summary="Word examples">
+        <th>Examples</th>
+        <% unless @word.examples.empty? %>
           <%= render @examples %>
-        </table>
-      <% end %>
+        <% end %>
+      </table>
+      <%= render 'shared/example_form'%>
     </td>
     <td class="sidebar round">
       <strong>Word</strong> <%= @word.word %><br />

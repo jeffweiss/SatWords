@@ -3,6 +3,7 @@ class DefinitionsController < ApplicationController
 
   def create
     @word = Word.find_by_id(params[:word_id])
+    @example = Example.new if signed_in?
     @definitions = @word.definitions.clone
     @definition = @word.definitions.build(params[:definition])
     if @definition.save

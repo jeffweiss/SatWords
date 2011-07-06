@@ -265,3 +265,15 @@ form.new_example textarea {
   height: 4em;
   margin-bottom: 0;
 }
+
+div.wordnik span.definition_sequence {
+  font-size: 85%;
+  font-weight: bold;
+  color: #666;
+}
+
+div.wordnik span.part_of_speech {
+  font-size: 60%;
+  font-style: italic;
+  color: #666;
+}

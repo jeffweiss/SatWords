@@ -1,0 +1,16 @@
+<% wordnik_def = Wordnik.word.get_definitions(@word.word) %>
+<div class="wordnik">
+  <% s = 1 %>
+  <% wordnik_def.each do |wd| %>
+    <span class="definition_sequence">
+      <%= "#{s}. " %>
+      <% s += 1 %>
+    </span>
+    <span class="definition_text">
+      <%= wd["text"] %>
+    </span>
+    <span class="part_of_speech">
+      <%= wd["partOfSpeech"] %>
+    </span><br />
+  <% end %>
+</div>
